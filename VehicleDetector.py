@@ -23,7 +23,7 @@ class VehicleDetector:
     ystart = 400
     ystop = [496, 520, 544, 568, 592, 688]
 #     ystop = [496, 544, 592, 640]
-    threshold = 5.0
+    threshold = 6
     
     #Heatmap history
     heatmap = np.zeros((num_avgs, 720, 1280))
@@ -166,7 +166,7 @@ class VehicleDetector:
         avg_heatmap = np.zeros((720, 1280))
         for i in range(self.num_avgs):
             idx = (self.heatmap_idx + i ) % self.num_avgs
-            exp_coeff = math.exp(-2*i/self.num_avgs)
+            exp_coeff = math.exp(-1*i/self.num_avgs)
 #             print(exp_coeff)
             avg_heatmap += (self.heatmap[idx] * exp_coeff)
 

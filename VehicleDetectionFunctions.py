@@ -158,7 +158,7 @@ def draw_labeled_bboxes(img, labels):
             # Draw car number
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(draw_img,'Car' + str(car_number),(np.min(nonzerox),np.min(nonzeroy)-10), 
-                        font, 1,RGB[(carnum-1)%3],4,cv2.LINE_AA)
+                        font, 1, RGB[(carnum-1)%3] ,4,cv2.LINE_AA)
             carnum += 1
         
     # Return the image
